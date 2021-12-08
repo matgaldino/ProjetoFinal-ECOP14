@@ -1,0 +1,59 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"1 delay.c
+[; ;delay.c: 1: void atraso(unsigned int n) {
+[v _atraso `(v ~T0 @X0 1 ef1`ui ]
+{
+[e :U _atraso ]
+[v _n `ui ~T0 @X0 1 r1 ]
+[f ]
+"2
+[; ;delay.c: 2:     unsigned int i, j, k, m;
+[v _i `ui ~T0 @X0 1 a ]
+[v _j `ui ~T0 @X0 1 a ]
+[v _k `ui ~T0 @X0 1 a ]
+[v _m `ui ~T0 @X0 1 a ]
+"4
+[; ;delay.c: 4:     for (i = 0; i < n; i++) {
+{
+[e = _i -> -> 0 `i `ui ]
+[e $U 5  ]
+[e :U 2 ]
+{
+"5
+[; ;delay.c: 5:         for (j = 0; j < 41; j++) {
+{
+[e = _j -> -> 0 `i `ui ]
+[e $ < _j -> -> 41 `i `ui 6  ]
+[e $U 7  ]
+[e :U 6 ]
+{
+"6
+[; ;delay.c: 6:             for (k = 0; k < 3; k++);
+{
+[e = _k -> -> 0 `i `ui ]
+[e $ < _k -> -> 3 `i `ui 9  ]
+[e $U 10  ]
+[e :U 9 ]
+[e ++ _k -> -> 1 `i `ui ]
+[e $ < _k -> -> 3 `i `ui 9  ]
+[e :U 10 ]
+}
+"7
+[; ;delay.c: 7:         }
+}
+[e ++ _j -> -> 1 `i `ui ]
+[e $ < _j -> -> 41 `i `ui 6  ]
+[e :U 7 ]
+}
+"8
+[; ;delay.c: 8:     }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 5 ]
+[e $ < _i _n 2  ]
+[e :U 3 ]
+}
+"9
+[; ;delay.c: 9: }
+[e :UE 1 ]
+}
